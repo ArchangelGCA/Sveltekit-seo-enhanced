@@ -84,7 +84,8 @@ I initially made this for my personal website and decided to open source it to s
 ## keywords?!
 It's optional for anyone who wants to use it. Google doesn't rely on keywords anymore but apparently bing still does put a tiny weight on it. I personally use keywords for my personal website's search function.
 
-## Duplicated Meta?
+## Using Cloudflare?
+DUPLICATED META!
 If you're behind Cloudflare and find yourself with duplicated meta tags, then you should disable auto-minify!
 
 `Speed -> Optimization -> Content Optimization -> Auto Minify -> UNCHECK HTML`
