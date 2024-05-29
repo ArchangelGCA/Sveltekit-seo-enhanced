@@ -10,24 +10,24 @@ Also optionally includes functionality for social media preview support
 
 <div align="center">
 
-  [![minzip size](https://img.shields.io/bundlephobia/minzip/sk-seo?style=for-the-badge)](https://img.shields.io/bundlephobia/minzip/sk-seo)
-  [![installs](https://img.shields.io/npm/d18m/sk-seo?style=for-the-badge)](https://img.shields.io/npm/d18m/sk-seo)
-  [![GitHub Repo stars](https://img.shields.io/github/stars/TheDahoom/sveltekit-seo?style=for-the-badge&label=STAR)](https://github.com/TheDahoom/Sveltekit-seo)
-  [![GitHub followers](https://img.shields.io/github/followers/TheDahoom?style=for-the-badge&logo=github&label=follow)](https://github.com/TheDahoom)
+[![minzip size](https://img.shields.io/bundlephobia/minzip/sk-seo?style=for-the-badge)](https://img.shields.io/bundlephobia/minzip/@archangelgca/sk-seo)
+[![installs](https://img.shields.io/npm/d18m/sk-seo?style=for-the-badge)](https://img.shields.io/npm/d18m/@archangelgca/sk-seo)
+[![GitHub Repo stars](https://img.shields.io/github/stars/TheDahoom/sveltekit-seo?style=for-the-badge&label=STAR)](https://github.com/ArchangelGCA/Sveltekit-seo-enhanced)
+[![GitHub followers](https://img.shields.io/github/followers/TheDahoom?style=for-the-badge&logo=github&label=follow)](https://github.com/ArchangelGCA)
 
 </div>
 
 
 ## Installation
 ```bash 
-npm i -D sk-seo
+npm i -D @archangelgca/sk-seo
 ```
 
 ## Usage
 import the file
 ```svelte
 <script>
-  import Seo from 'sk-seo';
+  import Seo from '@archangelgca/sk-seo';
 </script>
 ```
 Then place this code anywhere in your svelte file
@@ -84,6 +84,10 @@ I initially made this for my personal website and decided to open source it to s
 ## keywords?!
 It's optional for anyone who wants to use it. Google doesn't rely on keywords anymore but apparently bing still does put a tiny weight on it. I personally use keywords for my personal website's search function.
 
+## Duplicated Meta?
+If you're behind Cloudflare and find yourself with duplicated meta tags, then you should disable auto-minify!
+
+`Speed -> Optimization -> Content Optimization -> Auto Minify -> UNCHECK HTML`
 ## License
 [MIT License](https://github.com/TheDahoom/Sveltekit-seo/blob/main/LICENSE)
 

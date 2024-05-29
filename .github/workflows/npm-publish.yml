@@ -1,4 +1,4 @@
-name: Release and publish
+name: Publish to Registries
 
 on:
   push:
@@ -6,38 +6,30 @@ on:
       - main
 
 jobs:
-  publish-npm:
+  publish-github:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 
       - uses: actions/setup-node@v3
         with:
-          node-version: 20
-          registry-url: 'https://registry.npmjs.org'
-      - name: Check if version has been incremented
-        id: check-version
-        run: |
-          PACKAGE_NAME=$(node -p "require('./package.json').name")
-          VERSION=$(node -p "require('./package.json').version")
-          CURRENT_VERSION=$(npm view $PACKAGE_NAME version)
-          if [ "$VERSION" != "$CURRENT_VERSION" ]; then
-            echo "::set-output name=version_changed::true"
-            echo "::set-output name=new_version::$VERSION"
-          fi
-      - name: Create GitHub release
-        if: steps.check-version.outputs.version_changed == 'true'
-        uses: actions/create-release@v1
+          node-version: '20'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@archangelgca'
+      - run: npm ci
+      - run: npm publish --access public
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish-npm:
+    needs: publish-github
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          tag_name: v${{ steps.check-version.outputs.new_version }}
-          release_name: v${{ steps.check-version.outputs.new_version }}
-          draft: false
-          prerelease: false
-      - name: Publish to npm
-        if: steps.check-version.outputs.version_changed == 'true'
-        run: npm publish
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

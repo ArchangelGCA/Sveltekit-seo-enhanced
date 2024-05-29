@@ -1,6 +1,6 @@
 {
-  "name": "sk-seo",
-  "version": "0.2.6",
+  "name": "@archangelgca/sk-seo",
+  "version": "0.2.7",
   "description": "A lightweight, no depenencies, Sveltekit SEO component to save your time",
   "main": "SEO.svelte",
   "exports": {
@@ -21,8 +21,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TheDahoom/Sveltekit-seo.git"
+    "url": "git+https://github.com/ArchangelGCA/Sveltekit-seo-enhanced.git"
   },
-  "author": "Dahoom AlShaya DahoomA@dahoom.com",
+  "author": "(Original) Dahoom AlShaya DahoomA@dahoom.com (Extended) ArchangelGCA",
   "license": "MIT"
 }

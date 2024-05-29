@@ -12,8 +12,8 @@ export default class Seo extends SvelteComponent<{
     canonical?: string;
     /** The name of the site.*/
     siteName?: string;
-    /** Indicates whether the component should be indexed by search engines. 
-    @default true */
+    /** Indicates whether the component should be indexed by search engines.
+     @default true */
     index?: boolean;
     /** Indicates whether Twitter meta tags should be generated.@default true */
     twitter?: boolean;
@@ -36,6 +36,7 @@ export default class Seo extends SvelteComponent<{
 export type SeoProps = typeof __propDef.props;
 export type SeoEvents = typeof __propDef.events;
 export type SeoSlots = typeof __propDef.slots;
+// @ts-ignore
 import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
