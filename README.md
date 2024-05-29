@@ -94,6 +94,7 @@ If you're behind Cloudflare and find yourself with duplicated meta tags, then yo
 
 ## Credits
 Thanks to [RodneyLab](https://github.com/rodneylab) for his [blog](https://rodneylab.com/adding-schema-org-markup-to-sveltekit-site/) post which taught me about jsonLd and for suggesting an interesting snippet of code to render jsonLd
+Visit the original [Repo](https://github.com/TheDahoom/Sveltekit-seo)
 
 ## As seen on
 [Svelte Blog](https://svelte.dev/blog/whats-new-in-svelte-may-2024)
